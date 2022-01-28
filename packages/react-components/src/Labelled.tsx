@@ -1,4 +1,4 @@
-// Copyright 2017-2021 @polkadot/react-components authors & contributors
+// Copyright 2017-2022 @polkadot/react-components authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import React from 'react';
@@ -114,7 +114,7 @@ export default React.memo(styled(Labelled)`
         .ui.selection.dropdown {
           &:not(.floating) {
             padding-left: 1.45rem;
-            padding-top: 1.75rem;
+            padding-top: 1.6rem;
           }
 
           &.floating {

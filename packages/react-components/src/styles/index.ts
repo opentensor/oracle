@@ -1,4 +1,4 @@
-// Copyright 2017-2021 @polkadot/react-components authors & contributors
+// Copyright 2017-2022 @polkadot/react-components authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { ThemeProps } from '../types';
@@ -51,6 +51,16 @@ function getMenuHoverContrast (uiHighlight: string | undefined): string {
   return brightness < BRIGHTNESS
     ? 'rgba(0, 0, 0, 0.15)'
     : 'rgba(255, 255, 255, 0.15)';
+}
+
+function hexToRGB (hex: string, alpha?: string) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+
+  return alpha
+    ? `rgba(${r}, ${g}, ${b}, ${alpha})`
+    : `rgb(${r}, ${g}, ${b})`;
 }
 
 export default createGlobalStyle<Props & ThemeProps>(({ theme, uiHighlight }: Props & ThemeProps) => `
@@ -244,6 +254,8 @@ export default createGlobalStyle<Props & ThemeProps>(({ theme, uiHighlight }: Pr
       }
     }
   }
+
+  
 
   .theme--dark,
   .theme--light {

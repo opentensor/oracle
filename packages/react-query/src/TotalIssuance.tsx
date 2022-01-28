@@ -15,7 +15,8 @@ interface Props {
 
 function TotalIssuance ({ children, className = '', label }: Props): React.ReactElement<Props> {
   const { api } = useApi();
-  const totalIssuance = useCall<string>(api.query.balances?.totalIssuance);
+
+  const totalIssuance = useCall<string>(api.query.subtensorModule?.totalIssuance);
 
   return (
     <div className={className}>
